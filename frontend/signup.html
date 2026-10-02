@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234338ca'/%3E%3Cpath d='M9 22V10h3v12zm6 0V10h5.2a4 4 0 0 1 0 8H18v4z' fill='%23fff'/%3E%3C/svg%3E">
+  <title>Create account · InternPath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- S2 Signup -->
+  <main class="auth" id="main">
+    <div class="auth__panel auth__panel--wide">
+      <p class="brand auth__brand">Intern<span>Path</span></p>
+      <div class="card stack">
+        <div>
+          <h1>Create your account</h1>
+          <p class="muted">All fields are required.</p>
+        </div>
+
+        <form class="form" id="signup-form">
+          <fieldset>
+            <legend>I am joining as</legend>
+            <div class="segmented">
+              <label><input type="radio" name="role" value="intern" checked> Intern</label>
+              <label><input type="radio" name="role" value="mentor"> Mentor</label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" data-label="Name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" autocomplete="new-password" required aria-describedby="password-hint">
+              <p class="field__hint" id="password-hint">At least 8 characters, with 1 letter and 1 number.</p>
+            </div>
+            <div class="field">
+              <label for="confirm_password">Confirm password</label>
+              <input id="confirm_password" name="confirm_password" type="password" autocomplete="new-password" required data-label="Password confirmation">
+            </div>
+          </div>
+
+          <!-- Shown only for interns (progressive disclosure) -->
+          <fieldset class="form" id="intern-fields">
+            <legend class="eyebrow">Internship details</legend>
+            <div class="field">
+              <label for="mentor_id">Mentor</label>
+              <select id="mentor_id" name="mentor_id" required data-type="number" aria-describedby="mentor-hint">
+                <option value="">Select a mentor</option>
+              </select>
+              <p class="field__hint" id="mentor-hint" hidden>No mentors have signed up yet. A mentor needs to create an account first.</p>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="domain">Domain</label>
+                <input id="domain" name="domain" type="text" required minlength="2" maxlength="60" aria-describedby="domain-hint">
+                <p class="field__hint" id="domain-hint">For example Frontend, Backend or Data.</p>
+              </div>
+              <div class="field">
+                <label for="batch">Batch</label>
+                <input id="batch" name="batch" type="text" required minlength="2" maxlength="60" aria-describedby="batch-hint">
+                <p class="field__hint" id="batch-hint">For example 2026-B.</p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="start_date">Start date</label>
+                <input id="start_date" name="start_date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="end_date">End date</label>
+                <input id="end_date" name="end_date" type="date" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn--block">Create account</button>
+        </form>
+      </div>
+      <p class="auth__foot">Already have an account? <a href="login.html">Log in</a></p>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

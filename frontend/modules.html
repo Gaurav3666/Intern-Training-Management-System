@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234338ca'/%3E%3Cpath d='M9 22V10h3v12zm6 0V10h5.2a4 4 0 0 1 0 8H18v4z' fill='%23fff'/%3E%3C/svg%3E">
+  <title>Modules · InternPath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header id="site-header"></header>
+
+  <!-- S4 Modules -->
+  <main class="container stack" id="main" tabindex="-1">
+    <div class="page-head">
+      <div>
+        <h1>Modules</h1>
+        <p>The learning path, in order.</p>
+      </div>
+      <button type="button" class="btn" id="add-module" hidden>Add module</button>
+    </div>
+
+    <div class="grid grid--2" id="modules"></div>
+  </main>
+
+  <dialog id="module-dialog" aria-labelledby="module-dialog-title">
+    <h2 id="module-dialog-title">Add module</h2>
+    <form class="form" id="module-form">
+      <div class="field">
+        <label for="title">Title</label>
+        <input id="title" name="title" type="text" required minlength="3" maxlength="100">
+      </div>
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required maxlength="1000"></textarea>
+      </div>
+      <div class="field">
+        <label for="order_no">Order number</label>
+        <input id="order_no" name="order_no" type="number" required min="1" step="1" inputmode="numeric"
+               aria-describedby="order-hint" data-range-error="Order number must be a positive whole number">
+        <p class="field__hint" id="order-hint">Position in the learning path. Each module needs its own number.</p>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn--secondary" data-close>Cancel</button>
+        <button type="submit" class="btn">Save module</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="js/app.js"></script>
+  <script src="js/modules.js"></script>
+</body>
+</html>

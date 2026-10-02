@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234338ca'/%3E%3Cpath d='M9 22V10h3v12zm6 0V10h5.2a4 4 0 0 1 0 8H18v4z' fill='%23fff'/%3E%3C/svg%3E">
+  <title>InternPath</title>
+  <script src="js/app.js"></script>
+  <script>
+    // Entry point: send people to their dashboard, or to login.
+    const session = Session.get();
+    location.replace(session?.token ? dashboardFor(session.role) : 'login.html');
+  </script>
+</head>
+<body>
+  <noscript>This application needs JavaScript. <a href="login.html">Go to login</a></noscript>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234338ca'/%3E%3Cpath d='M9 22V10h3v12zm6 0V10h5.2a4 4 0 0 1 0 8H18v4z' fill='%23fff'/%3E%3C/svg%3E">
+  <title>Dashboard · InternPath</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header id="site-header"></header>
+
+  <!-- S8 Mentor Dashboard -->
+  <main class="container stack" id="main" tabindex="-1">
+    <div class="page-head">
+      <div>
+        <h1>Dashboard</h1>
+        <p>How your interns are doing.</p>
+      </div>
+    </div>
+
+    <section class="grid" id="stats" aria-label="Summary"></section>
+
+    <section aria-labelledby="interns-title" class="stack stack--sm">
+      <h2 id="interns-title">Your interns</h2>
+      <div id="interns"></div>
+    </section>
+
+    <section class="card" id="chart-card" aria-labelledby="chart-title" hidden>
+      <h2 id="chart-title">Overall progress per intern (%)</h2>
+      <div class="chart-box">
+        <canvas id="progress-chart" role="img"></canvas>
+      </div>
+      <p class="field__hint" id="chart-fallback" hidden>The chart could not be loaded. The same figures are in the table above.</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/mentor-dashboard.js"></script>
+</body>
+</html>
