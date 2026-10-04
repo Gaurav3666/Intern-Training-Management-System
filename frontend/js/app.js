@@ -1,8 +1,10 @@
 /* Shared helpers: session, API client, header, toasts, forms, formatting. */
 'use strict';
 
-// Same origin when FastAPI serves the pages; otherwise (e.g. Live Server) call the API directly.
-const API_BASE = location.port === '8000' ? '' : 'http://127.0.0.1:8000';
+// Same origin when FastAPI serves the pages, whatever port it runs on; from Live Server (5500),
+// Live Preview (3000) or a file opened directly, call the API on its default port.
+const SERVED_SEPARATELY = location.protocol === 'file:' || ['5500', '3000'].includes(location.port);
+const API_BASE = SERVED_SEPARATELY ? 'http://127.0.0.1:8000' : '';
 const SESSION_KEY = 'itms_session';
 const FLASH_KEY = 'itms_flash';
 const NETWORK_ERROR = 'Something went wrong. Please try again.';
@@ -486,3 +488,4 @@ function fillSelect(select, items, { value = 'id', label = 'name' } = {}) {
   select.length = 1;
   items.forEach((item) => select.add(new Option(item[label], item[value])));
 }
+  
