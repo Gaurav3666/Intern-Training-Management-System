@@ -890,6 +890,7 @@ For production deployment:
 - Change all demo passwords
 - Disable development settings where appropriate
 
+Loom Video - https://drive.google.com/file/d/15KGfzFoU5Our16rErL9BpYPxDPhVK3LH/view?usp=drivesdk
 ---
 
 # Future Improvements
